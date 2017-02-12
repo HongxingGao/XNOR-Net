@@ -34,7 +34,7 @@
 
 # Caffe models and LMDB data
 *.caffemodel
-*.solverstatte
+*.solverstate
 *.mdb
 *.log
 
