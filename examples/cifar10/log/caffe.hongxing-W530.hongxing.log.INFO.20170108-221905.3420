@@ -1,0 +1,4 @@
+Log file created at: 2017/01/08 22:19:05
+Running on machine: hongxing-W530
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F0108 22:19:05.955747  3420 caffe.cpp:155] Check failed: FLAGS_solver.size() > 0 (0 vs. 0) Need a solver definition to train.

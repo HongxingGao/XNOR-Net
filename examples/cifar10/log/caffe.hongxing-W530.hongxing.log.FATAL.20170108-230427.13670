@@ -1,0 +1,4 @@
+Log file created at: 2017/01/08 23:04:27
+Running on machine: hongxing-W530
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F0108 23:04:27.404759 13670 cudnn_relu_layer.cu:24] Check failed: status == CUDNN_STATUS_SUCCESS (3 vs. 0)  CUDNN_STATUS_BAD_PARAM

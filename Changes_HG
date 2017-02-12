@@ -1,0 +1,19 @@
+1.cudnn V5 support
+ solution: (1)copy the cudnn.n from the latest caffe into this project. the new cudnn.h from the new caffe supports cudnn V5
+           (2)replace cudnn_conv_layer.cu,cudnn_relu_layer.cu, cudnn_sigmoid_layer.cu, cudnn_tanh_layer.cu with their counterparts from the cudnn V5 supported official caffe codes. Please also replace their cudnn_*_layer.hpp as well.
+           (3) delete "*_v3" in include/caffe/ex_layers/binary_conv_layer.hpp: e.g. change 'func_v3 ( param1, param2..)' to 'func (param1, param2, ..)' 
+
+2.GCC version is too new in Ubuntu 16.04 causing "/usr/include/string.h:652:42: error: ‘memcpy’ was not declared in this scope"
+solution: add a flag when compiling in CmakeLists.txt
+
+before:
+    if(UNIX OR APPLE)
+       set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -Wall")
+    endif()
+after:
+   if(UNIX OR APPLE)
+       set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -Wall")
+       set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D_FORCE_INLINES")
+    endif()
+
+
